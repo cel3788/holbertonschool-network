@@ -1,8 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 if [ $# -ne 1 ]; then
-  echo "Usage: $0 {IP_ADDRESS}"
-  exit 1
+    echo "Usage: $0 {IP_ADDRESS}"
+    exit 1
 fi
 
-ping -c 5 "$1"
+ping_result=$(ping -c 5 $1)
+
+echo "$ping_result"
