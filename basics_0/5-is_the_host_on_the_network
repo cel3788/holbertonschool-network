@@ -1,12 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-if [ -z "$1" ]; then
-    echo "Usage: $0 {IP_ADDRESS}"
-    exit 1
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $0 {IP_ADDRESS}"
+  exit 1
 fi
 
-while true
-do
-    ping -c 1 $1
-    sleep 1
-done
+ping -c 5 "$1"
